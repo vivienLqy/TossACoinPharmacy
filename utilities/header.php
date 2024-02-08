@@ -36,7 +36,7 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
     <!-- En-tête de la page -->
     <nav class="navbar navbar-expand-lg bg-op navbar-dark"> <!-- Barre de navigation Bootstrap -->
       <div class="container"> <!-- Conteneur Bootstrap -->
-        <a class="navbar-brand ff-tw" href="index.php"> <!-- Marque de la pharmacie -->
+        <a class="navbar-brand ff-tw neonText" href="index.php"> <!-- Marque de la pharmacie -->
           <img class="logo" src="assets/img/logo.png" alt="">TossACoinPharmacy
         </a>
         <!-- Bouton de bascule pour le menu de navigation sur les appareils mobiles -->
@@ -45,9 +45,9 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"> <!-- Contenu du menu de navigation -->
           <div class="navbar-nav"> <!-- Liste des éléments du menu de navigation -->
-            <a class="nav-link text-light ff-tw <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
-            <a class="nav-link text-light ff-tw <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produits</a>
-            <a class="nav-link text-light ff-tw <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
+            <a class="nav-link text-light ff-tw neonText <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
+            <a class="nav-link text-light ff-tw neonText <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produits</a>
+            <a class="nav-link text-light ff-tw neonText <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
           </div>
         </div>
       </div>

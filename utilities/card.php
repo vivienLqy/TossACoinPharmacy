@@ -6,7 +6,7 @@
             <!-- Colonne de taille moyenne -->
             <img class="mx-auto d-block w-75 rounded-5" src="<?= $picture['pathImg'] ?>" alt="">
             <!-- Image -->
-            <h2><?= $potion['title'] ?></h2>
+            <h2 class="neonText"><?= $potion['title'] ?></h2>
             <!-- Titre de la potion -->
             <p>Le créateur est : <?= $potion['doctor_name'] ?></p>
             <!-- Nom du créateur -->
@@ -17,11 +17,13 @@
             <p>Prix : <?= $potion['price'] ?>€</p>
             <!-- Prix de la potion -->
             <p>Durée : <?= $potion['duration'] ?></p>
+            <!-- Ingredient de la potion -->
+            <p>Ingredient : <?= $potion['ingredient'] ?>
             <!-- Durée de la potion -->
             <p>Commentaires : <?= $potion['comment'] ?></p>
             <!-- Commentaires sur la potion -->
             <div class="card-body d-flex justify-content-center">
-                <a href="#" class="btn btn-success" data-bs-toggle="button">Ajouter au panier</a>
+                <a href="#" class="btn btn-red text-light" data-bs-toggle="button">Ajouter au panier</a>
             </div>
             <!-- Bouton pour ajouter au panier -->
         </div>

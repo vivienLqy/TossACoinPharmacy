@@ -97,3 +97,22 @@ body{
 .img-box:hover .desc{
     display: block;
 }
+.neonText {
+  color: #fff;
+  text-shadow:
+      0 0 7px #ed5151,
+      0 0 10px #ed5151,
+      0 0 21px #ed5151,
+      0 0 42px #920303,
+      0 0 82px #920303,
+      0 0 92px #920303,
+      0 0 102px #920303,
+      0 0 151px #920303;
+}
+.btn-red{
+    background:#920303;
+}
+
+.list-group-item {
+    background-color: #fff0  !important;
+}

@@ -6,7 +6,7 @@ require __DIR__ . ("/utilities/header.php");
     <div class="row m-5 d-flex justify-content-center">
         <!-- GRILLE COORDONNEES -->
         <div class="col-md-9">
-            <h2 class="h1-responsive text-white my-1 pb-1 text-center">Formulaire de contact</h2>
+            <h2 class="h1-responsive neonText my-4 pb-1 text-center">Formulaire de contact</h2>
             <form name="contact-form" id="formulaire" class="text-center mt-5">
                 <!--Grid row-->
                 <?php require __DIR__ . ("/utilities/form.php"); ?>
@@ -28,13 +28,14 @@ require __DIR__ . ("/utilities/header.php");
                     </div>
                 </div>
                 <!--Grid row-->
-                <div class="mt-4 text-center">
-                    <button type="submit" class="btn btn-success gold rounded-0 w-20 text-uppercase">Envoyer</button>
+                <div class="my-4 text-center">
+                    <button type="submit" class="btn btn-red rounded-2 text-light gold rounded-0 w-20 text-uppercase ">Envoyer</button>
                 </div>
             </form>
         </div>
     </div>
 </section>
+</main>
 <?php require __DIR__ . ("/utilities/footer.php"); ?>
 </body>
 </html>
