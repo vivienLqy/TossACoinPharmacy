@@ -32,33 +32,28 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
 </head>
 
 <body class="d-flex flex-column min-vh-100"> <!-- Corps de la page avec une disposition flexbox en colonne -->
-  <header>
+<header>
     <!-- En-tête de la page -->
-    <nav class="navbar navbar-expand-lg bg-op w-100 h-50px p-0"> <!-- Barre de navigation Bootstrap -->
-      <div class="container-fluid w-100 h-100"> <!-- Conteneur fluide Bootstrap -->
-        <a class="navbar-brand text-white ff-tw" href="index.php"> <img class="logo" src="assets/img/logo.png" alt="">TossACoinPharmacy</a> <!-- Marque et logo de la pharmacie -->
+    <nav class="navbar navbar-expand-lg bg-op navbar-dark"> <!-- Barre de navigation Bootstrap -->
+      <div class="container"> <!-- Conteneur Bootstrap -->
+        <a class="navbar-brand ff-tw" href="index.php"> <!-- Marque de la pharmacie -->
+          <img class="logo" src="assets/img/logo.png" alt="">TossACoinPharmacy
+        </a>
         <!-- Bouton de bascule pour le menu de navigation sur les appareils mobiles -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end w-100 " id="navbarNavAltMarkup"> <!-- Contenu du menu de navigation -->
-          <div class="navbar-nav d-flex justify-content-around w-50 "> <!-- Liste des éléments du menu de navigation -->
-          <li class="nav-item">
-              <a class="nav-link text-light ff-tw <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>"
-               aria-current="page" href="<?= $index_page; ?>">Accueil
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light ff-tw <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produit</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light ff-tw <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
-            </li>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"> <!-- Contenu du menu de navigation -->
+          <div class="navbar-nav"> <!-- Liste des éléments du menu de navigation -->
+            <a class="nav-link text-light ff-tw <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
+            <a class="nav-link text-light ff-tw <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produits</a>
+            <a class="nav-link text-light ff-tw <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
           </div>
         </div>
       </div>
     </nav>
-  </header>
+</header>
+
   <div class="background"> <!-- Fond d'écran -->
   <main class="flex-grow-1"> <!-- Contenu principal de la page -->
     
