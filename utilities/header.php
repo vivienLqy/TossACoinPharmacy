@@ -43,16 +43,15 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
         </button>
         <div class="collapse navbar-collapse d-flex justify-content-end w-100 " id="navbarNavAltMarkup"> <!-- Contenu du menu de navigation -->
           <div class="navbar-nav d-flex justify-content-around w-50 "> <!-- Liste des éléments du menu de navigation -->
-            <li class="nav-item">
-              <!-- Lien vers la page d'accueil avec une classe active si la page est la page d'accueil -->
-              <a class="nav-link text-light ff-tw <?= isActive($index_page, $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
+          <li class="nav-item">
+              <a class="nav-link text-light ff-tw <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>"
+               aria-current="page" href="<?= $index_page; ?>">Accueil
+              </a>
             </li>
             <li class="nav-item">
-              <!-- Lien vers la page de produits avec une classe active si la page est la page de produits -->
               <a class="nav-link text-light ff-tw <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produit</a>
             </li>
             <li class="nav-item">
-              <!-- Lien vers la page de contact avec une classe active si la page est la page de contact -->
               <a class="nav-link text-light ff-tw <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
             </li>
           </div>

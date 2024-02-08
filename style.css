@@ -1,11 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@font-face {
+    font-family: 'thewitchermedium';
+    src: url('/assets/font/thewitcher-jnoj-webfont.woff2') format('woff2'),
+         url('/assets/font/thewitcher-jnoj-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 .ff-tw{
-    font-family: 'Audiowide', sans-serif;
+    font-family: 'thewitchermedium';
 }
 body{
     background: #010409;
