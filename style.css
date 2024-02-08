@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.ff-tw{
+    font-family: 'Audiowide', sans-serif;
+}
+body{
+    background: #010409;
+}
+.w-95{
+    width: 95%;
+}
+.w-90{
+    width: 90%;
+}
+.h-50px{
+    height: 50px;
+}
+.w-40{
+    width: 40%;
+}
+.h35{
+    height: 35%;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+}
+.top-25{
+    top: 25%;
+}
+.top-55{
+    top: 55%;
+}
+.top-15{
+    top: 15%
+}
+.top-65{
+    top: 65%
+}
+.bottom-10{
+    bottom: 10%;
+}
+.pt-200{
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+.bg-op{
+    background: rgba(69, 61, 61, 0.51);
+}
+.ft{
+    font-size: 12px;
+}
+.background{
+    background: no-repeat center url("assets/img/peakpx.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+.top4{
+    height: 200vh;
+}
+.containers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.img-box{
+    height: 500px;
+    background: var(--img) center;
+    background-size: cover;
+    flex-basis: 260px;
+    position: relative;
+    transition: 400ms all ease;
+    filter: grayscale(100%) opacity(35%);
+}
+.img-box:hover{
+    flex-basis: 300px;
+    filter: grayscale(0%) opacity(100%);
+    display: block;
+}
+.desc{
+    display: none;
+}
+.img-box:hover .desc{
+    display: block;
+}
