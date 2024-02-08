@@ -1,5 +1,5 @@
 <?php
-include 'assets/data/form_data.php';
+require_once dirname(__DIR__) . ('/assets/form.data.php');
 
  echo '<div class="row m-5 d-flex justify-content-center">';
 foreach ($name as $value) {

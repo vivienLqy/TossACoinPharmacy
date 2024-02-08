@@ -1,11 +1,13 @@
 <?php
-    require_once __DIR__ . ('/config/config.php');
-    require_once __DIR__ . ('/function/database.fn.php');
-    $db = getPDOlink($config);
-    require_once __DIR__ . ('/function/potion_fn.php');
-    require_once __DIR__ . ('/utilities/header.php');
+// Inclusion des fichiers de configuration et de fonctions
+require_once __DIR__ . ('/config/config.php');
+require_once __DIR__ . ('/function/database.fn.php');
+$db = getPDOlink($config);
+require_once __DIR__ . ('/function/potion_fn.php');
+require_once __DIR__ . ('/utilities/header.php');
 
-    $potions = findAllPotions($db);
+// Récupération de toutes les potions depuis la base de données
+$potions = findAllPotions($db);
 ?>
 <div class="container pt-5">
     <div class="row justify-content-center">
@@ -33,7 +35,7 @@
         <?php endforeach; ?>
     </div>
 </div> 
-</div> 
 </main> 
+    <?php require __DIR__ . ("/utilities/footer.php"); ?>
 </body>
 </html>

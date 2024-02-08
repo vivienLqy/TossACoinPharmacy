@@ -29,6 +29,10 @@ body{
     width: 50px;
     height: 50px;
 }
+.my-50{
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
 .top-25{
     top: 25%;
 }
@@ -58,9 +62,6 @@ body{
     background: no-repeat center url("assets/img/peakpx.jpg");
     background-size: cover;
     height: 100vh;
-}
-.top4{
-    height: 200vh;
 }
 .containers{
     width: 100%;

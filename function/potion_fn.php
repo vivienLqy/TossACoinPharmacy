@@ -1,12 +1,5 @@
 <?php
-
-function findAllPotion ($db) {
-    $sql = "SELECT * FROM `potion` 
-    INNER JOIN picture ON potion.id = picture.potionID;";
-    $requete = $db->query($sql);
-    $potions = $requete->fetchAll();
-    return $potions;
-}
+// Récupère toutes les potions, y compris celles sans image associée
 function findAllPotions ($db) {
     $sql = "SELECT * FROM `potion` 
     LEFT JOIN picture ON potion.id = picture.potionID;";
@@ -14,6 +7,8 @@ function findAllPotions ($db) {
     $potions = $requete->fetchAll();
     return $potions;
 }
+
+// Récupère les détails d'une potion spécifique en fonction de son ID
 function findPotion ($db, $currentId) {
     $sql = "SELECT 
     p.id, p.title, p.rating, p.duration, p.toxic, p.utilisation, p.price, p.comment,
@@ -31,12 +26,15 @@ function findPotion ($db, $currentId) {
      return $result;
 }
 
+// Récupère l'image associée à une potion spécifique en fonction de son ID
 function findPicturePotion ($db,  $currentId) {
     $sql = "SELECT * FROM `picture` WHERE potionID = $currentId";
     $requete = $db->query($sql);
     $picture = $requete->fetch();
     return $picture;
 }
+
+// Récupère les quatre premières potions les mieux notées
 function potionTop4 ($db) {
     $sql = "SELECT * FROM `potion` 
             INNER JOIN picture ON potion.id = picture.potionID
@@ -45,8 +43,9 @@ function potionTop4 ($db) {
     $picture = $requete->fetchAll();
     return $picture;
 }
-function getStar($rating) {
 
+// Génère un affichage visuel des étoiles pour représenter une note donnée
+function getStar($rating) {
     $starRating = round($rating);
     $note = $starRating / 2;
     $starSplit = explode('.', $note);
@@ -64,3 +63,4 @@ function getStar($rating) {
         echo '<i class="bi bi-star"></i>';
     }
 }
+
