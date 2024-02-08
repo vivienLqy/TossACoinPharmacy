@@ -14,9 +14,9 @@
                         <?= getStar($potion['rating']); ?> 
             </div>
             <!-- Note de la potion -->
-            <p>Prix : <?= $potion['price'] ?>€</p>
+            <p class="mt-3">Prix : <?= $potion['price'] ?> <i class="fa-solid fa-crown"></i></p>
             <!-- Prix de la potion -->
-            <p>Durée : <?= $potion['duration'] ?></p>
+            <p>Durée : <?= $potion['duration'] ?>s</p>
             <!-- Ingredient de la potion -->
             <p>Ingredient : <?= $potion['ingredient'] ?>
             <!-- Durée de la potion -->

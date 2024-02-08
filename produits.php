@@ -24,7 +24,7 @@ $potions = findAllPotions($db);
                         <?= $potion['rating'] ?>/10
                     </li>
                     <li class="list-group-item text-light">
-                        <?= $potion['price'] ?>€
+                        <?= $potion['price'] ?> <i class="fa-solid fa-crown"></i>
                     </li>
                 </ul>
                 <div class="card-body d-flex justify-content-between">

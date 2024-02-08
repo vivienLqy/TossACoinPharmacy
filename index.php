@@ -41,7 +41,7 @@ $potions = potionTop4($db);
                         <?= getStar($potion['rating']); ?>
                     </div>
                     <!-- Prix de la potion -->
-                    <p><?= $potion['price'] ?> €</p>
+                    <p><?= $potion['price'] ?> <i class="fa-solid fa-crown"></i></p>
                     <!-- Bouton de lien pour découvrir la potion -->
                     <a href="produits.php" class="btn text-light btn-red w-50 mb-2" role="button">Découvrir</a>
                 </div>
