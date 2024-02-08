@@ -115,4 +115,5 @@ body{
 
 .list-group-item {
     background-color: #fff0  !important;
+    border: var(--bs-list-group-border-width) solid var(--bs-secondary-color);
 }

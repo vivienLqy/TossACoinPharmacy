@@ -14,9 +14,9 @@ $potions = potionTop4($db);
         <!-- Titre et contenu principal de la section -->
         <h2 class="text-center ff-tw neonText">Notre Site</h2>
         <p class="text-center">
-            Bienvenue chez BlueChemistry, votre partenaire de confiance pour des solutions de santé
+            Bienvenue chez TossACoinPharmacy, votre partenaire de confiance pour des solutions de santé
             accessibles et de qualité. Notre équipe dévouée travaille sans relâche pour vous offrir les meilleurs
-            services dans le domaine de la vente de médicaments. Faisons connaissance avec ceux qui contribuent chaque
+            services dans le domaine de la vente de potions. Faisons connaissance avec ceux qui contribuent chaque
             jour à la réussite de notre mission.
         </p>
         <!-- Bouton de lien vers la page des produits -->
