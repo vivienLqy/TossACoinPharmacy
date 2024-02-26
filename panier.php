@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 require __DIR__ . ("/utilities/header.php");
 require __DIR__ . ('/function/potion_fn.php');
+=======
+require __DIR__ . ("/utilities/header.php"); 
+require __DIR__ . ('/function/potion_fn.php'); 
+>>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
 ?>
 <section class="h-100">
   <div class="container h-100 py-5">
@@ -19,7 +24,12 @@ require __DIR__ . ('/function/potion_fn.php');
           <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
               <div class="col-md-2 col-lg-2 col-xl-2">
+<<<<<<< HEAD
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+=======
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+>>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
                   class="img-fluid rounded-3" alt="Cotton T-shirt">
               </div>
               <div class="col-md-3 col-lg-3 col-xl-3">
@@ -54,7 +64,12 @@ require __DIR__ . ('/function/potion_fn.php');
           <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
               <div class="col-md-2 col-lg-2 col-xl-2">
+<<<<<<< HEAD
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+=======
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+>>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
                   class="img-fluid rounded-3" alt="Cotton T-shirt">
               </div>
               <div class="col-md-3 col-lg-3 col-xl-3">
@@ -89,7 +104,12 @@ require __DIR__ . ('/function/potion_fn.php');
           <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
               <div class="col-md-2 col-lg-2 col-xl-2">
+<<<<<<< HEAD
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+=======
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+>>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
                   class="img-fluid rounded-3" alt="Cotton T-shirt">
               </div>
               <div class="col-md-3 col-lg-3 col-xl-3">
@@ -124,7 +144,12 @@ require __DIR__ . ('/function/potion_fn.php');
           <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
               <div class="col-md-2 col-lg-2 col-xl-2">
+<<<<<<< HEAD
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+=======
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+>>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
                   class="img-fluid rounded-3" alt="Cotton T-shirt">
               </div>
               <div class="col-md-3 col-lg-3 col-xl-3">
@@ -173,10 +198,17 @@ require __DIR__ . ('/function/potion_fn.php');
 
       </div>
     </div>
+<<<<<<< HEAD
+=======
+  </div>
+>>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
 </section>
 </main>
 <!-- Inclusion du pied de page -->
 <?php require __DIR__ . ("/utilities/footer.php"); ?>
 </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
 </html>
