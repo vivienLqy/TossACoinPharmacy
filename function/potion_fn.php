@@ -7,6 +7,26 @@ function findAllPotions ($db) {
     $potions = $requete->fetchAll();
     return $potions;
 }
+function findDoctor ($db){
+    $sql = "SELECT * FROM `doctor_name`";
+    $requete = $db->query($sql);
+    $doctor_names = $requete->fetchAll();
+    return $doctor_names;
+}
+function findIngredient($db){
+    $sql = "SELECT * FROM `ingredient`";
+    $requete = $db->query($sql);
+    $ingredient_names = $requete->fetchAll();
+    return $ingredient_names;
+}
+function findPictureDoctor($db){
+    $sql ="SELECT picture_doctor.*, doctor_name.name AS doctor_name
+    FROM picture_doctor
+    INNER JOIN doctor_name ON picture_doctor.doctor_id = doctor_name.id;";
+    $requete = $db->query($sql);
+    $doctors = $requete->fetchAll();
+    return $doctors;
+}
 
 // Récupère les détails d'une potion spécifique en fonction de son ID
 function findPotion ($db, $currentId) {
@@ -37,8 +57,8 @@ function findPicturePotion ($db,  $currentId) {
 // Récupère les quatre premières potions les mieux notées
 function potionTop4 ($db) {
     $sql = "SELECT * FROM `potion` 
-            INNER JOIN picture ON potion.id = picture.potionID
-            ORDER BY rating DESC LIMIT 4;";
+    INNER JOIN picture ON potion.id = picture.potionID
+    ORDER BY rating DESC LIMIT 4;";
     $requete = $db->query($sql);
     $picture = $requete->fetchAll();
     return $picture;
@@ -62,5 +82,13 @@ function getStar($rating) {
     for ($i=0; $i < 5 - $starNbr ; $i++) { 
         echo '<i class="bi bi-star"></i>';
     }
+}
+function findBestPotions($db, $order ) {
+    $sql = "SELECT * FROM `potion` 
+    LEFT JOIN picture ON potion.id = picture.potionID
+    ORDER BY price $order ;";
+    $requete = $db->query($sql);
+    $potions = $requete->fetchAll();
+    return $potions;
 }
 

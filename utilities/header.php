@@ -23,7 +23,7 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
   <!-- Script Bootstrap -->
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!-- Feuille de style personnalisée -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <!-- Liens vers les polices Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -38,7 +38,7 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
     <nav class="navbar navbar-expand-lg bg-op navbar-dark"> <!-- Barre de navigation Bootstrap -->
       <div class="container"> <!-- Conteneur Bootstrap -->
         <a class="navbar-brand ff-tw neonText" href="index.php"> <!-- Marque de la pharmacie -->
-          <img class="logo" src="assets/img/logo.png" alt="">TossACoinPharmacy
+          <img class="logo" src="/assets/img/logo.png" alt="">TossACoinPharmacy
         </a>
         <!-- Bouton de bascule pour le menu de navigation sur les appareils mobiles -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +49,12 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
             <a class="nav-link text-light ff-tw neonText <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
             <a class="nav-link text-light ff-tw neonText <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produits</a>
             <a class="nav-link text-light ff-tw neonText <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
+            <a href="panier.php" class="btn btn-outline-light ms-4">
+              <i class="bi-cart-fill me-1"></i>
+              <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+            </a>
           </div>
+
         </div>
       </div>
     </nav>
