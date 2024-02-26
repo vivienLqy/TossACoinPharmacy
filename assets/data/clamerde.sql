@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 08 fév. 2024 à 10:54
+-- Généré le : lun. 26 fév. 2024 à 13:44
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -209,6 +209,32 @@ INSERT INTO `picture` (`id`, `pathImg`, `potionId`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `picture_doctor`
+--
+
+DROP TABLE IF EXISTS `picture_doctor`;
+CREATE TABLE IF NOT EXISTS `picture_doctor` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pathImg` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `doctor_id` int NOT NULL,
+  `bio` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  PRIMARY KEY (`id`),
+  KEY `doctor_id` (`doctor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `picture_doctor`
+--
+
+INSERT INTO `picture_doctor` (`id`, `pathImg`, `doctor_id`, `bio`) VALUES
+(1, 'assets/img/Medecin/Geralt.jpg', 1, 'Mes potions, alliant science et nature, offrent guérison et réconfort. De l\'élixir apaisant au philtre régénérateur, chaque goutte est un miracle. Explorez en confiance, car derrière chaque flacon se cache l\'expertise d\'un guérisseur dévoué.'),
+(2, 'assets/img/Medecin/Ciri.jpg', 2, 'Mes potions, œuvres d\'art curatives, allient science et nature. De l\'élixir apaisant à l\'onguent régénérateur, chaque potion offre espoir de guérison. Explorez en confiance, car chaque flacon cache l\'expertise d\'une guérisseuse dévouée, prête à vous accompagner vers la santé'),
+(3, 'assets/img/Medecin/Triss.jpg', 3, 'Avec moi, la magie rencontre l\'alchimie. Médecin et enchanteresse, je fusionne nature et sorcellerie pour des potions inégalées. De l\'élixir revigorant à la décoction apaisante, chaque flacon promet soulagement. Explorez en confiance, car chaque formule témoigne de mon engagement pour votre bien-être'),
+(4, 'assets/img/Medecin/Yennefer.jpg', 4, 'L\'alchimie élégante, la magie puissante : médecin et sorcière, je crée des potions curatives d\'efficacité rare. De l\'élixir revitalisant à la concoction régénératrice, chaque flacon porte mon expertise. Explorez en confiance, car chaque formule témoigne de mon engagement à vous offrir le meilleur de la médecine magique');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `potion`
 --
 
@@ -265,6 +291,12 @@ ALTER TABLE `ingredient_potion`
 --
 ALTER TABLE `picture`
   ADD CONSTRAINT `picture_ibfk_1` FOREIGN KEY (`potionId`) REFERENCES `potion` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `picture_doctor`
+--
+ALTER TABLE `picture_doctor`
+  ADD CONSTRAINT `picture_doctor_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor_name` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `potion`

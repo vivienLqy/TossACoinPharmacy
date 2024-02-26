@@ -53,18 +53,9 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <!-- Contenu du menu de navigation -->
           <div class="navbar-nav"> <!-- Liste des éléments du menu de navigation -->
-<<<<<<< HEAD
             <a class="nav-link text-light ff-tw neonText <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
             <a class="nav-link text-light ff-tw neonText <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produits</a>
             <a class="nav-link text-light ff-tw neonText <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
-=======
-            <a class="nav-link text-light ff-tw neonText <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>"
-              aria-current="page" href="<?= $index_page; ?>">Accueil</a>
-            <a class="nav-link text-light ff-tw neonText <?= isActive($produit_page, $current_url); ?>"
-              href="<?= $produit_page; ?>">Nos produits</a>
-            <a class="nav-link text-light ff-tw neonText <?= isActive($contact_page, $current_url); ?>"
-              href="<?= $contact_page; ?>">Contact</a>
->>>>>>> c4d1d5b1587dab10847749e0cc1cd3b0629a428c
             <a href="panier.php" class="btn btn-outline-light ms-4">
               <i class="bi-cart-fill me-1"></i>
               <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
