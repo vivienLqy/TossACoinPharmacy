@@ -17,8 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $ingredient = $_POST['ingredient'];
     $toxic = $_POST['toxic'];
     $comment = $_POST['description'];
-    
-    $sql = "INSERT INTO "
+
 }
 ?>
  <div class="container">
