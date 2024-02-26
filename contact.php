@@ -35,7 +35,5 @@ require __DIR__ . ("/utilities/header.php");
         </div>
     </div>
 </section>
-</main>
+
 <?php require __DIR__ . ("/utilities/footer.php"); ?>
-</body>
-</html>

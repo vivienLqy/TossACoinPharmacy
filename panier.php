@@ -174,8 +174,6 @@ require __DIR__ . ('/function/potion_fn.php');
       </div>
     </div>
 </section>
-</main>
+
 <!-- Inclusion du pied de page -->
 <?php require __DIR__ . ("/utilities/footer.php"); ?>
-</body>
-</html>

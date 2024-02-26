@@ -60,7 +60,5 @@ if (isset($_POST['mySelect']) && $_POST['mySelect'] == 'ASC') {
         <?php endforeach; ?>
     </div>
 </div> 
-</main> 
+
 <?php require __DIR__ . ("/utilities/footer.php"); ?>
-</body>
-</html>

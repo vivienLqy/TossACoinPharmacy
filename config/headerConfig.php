@@ -1,6 +1,6 @@
 <?php
 // Définition du domaine de base du site
-$domain = 'http://localhost:8000/';
+$domain = '/';
 
 // Définition des URL des différentes pages du site
 $index_page = $domain; // L'URL de la page d'accueil est simplement le domaine

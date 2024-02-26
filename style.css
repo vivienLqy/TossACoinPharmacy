@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 section{
-    block-size: 80vh;
+    /* block-size: 80vh; */
     scroll-snap-align: center;
     scroll-snap-stop: always;
 }
@@ -74,7 +74,7 @@ body{
 .background{
     background: no-repeat center url("assets/img/peakpx.jpg");
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .containers{
     width: 100%;
