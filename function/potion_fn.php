@@ -5,7 +5,7 @@ function findAllPotions ($db) {
     LEFT JOIN picture ON potion.id = picture.potionID;";
     $requete = $db->query($sql);
     $potions = $requete->fetchAll();
-    return $potions;
+    return $potions;  
 }
 function findDoctor ($db){
     $sql = "SELECT * FROM `doctor_name`";
@@ -17,7 +17,7 @@ function findIngredient($db){
     $sql = "SELECT * FROM `ingredient`";
     $requete = $db->query($sql);
     $ingredient_names = $requete->fetchAll();
-    return $ingredient_names;
+    return $ingredient_names;  
 }
 function findPictureDoctor($db){
     $sql ="SELECT picture_doctor.*, doctor_name.name AS doctor_name
