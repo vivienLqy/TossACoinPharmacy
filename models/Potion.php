@@ -4,6 +4,7 @@ class Potion
 {
     private int $id;
     private string $name;
+    private string $creator;
     private string $picture;
     private string $description;
     private array $ingredients;
@@ -11,6 +12,7 @@ class Potion
     private int $toxicity;
     private float $price;
     private int $numberOfUse;
+    private float $rating;
 
     // Getter : permet de récupérer la valeur d'une propriété
     // Setter : permet d'assigner une valeur à une propriété
@@ -23,6 +25,16 @@ class Potion
     public function setName(string $newName): string
     {
         return $this->name = $newName;
+    }
+    
+    public function getCreator(): string
+    {
+        return $this->creator;
+    }
+
+    public function setCreator(string $newCreator): string
+    {
+        return $this->creator = $newCreator;
     }
 
     public function getPicture(): string
@@ -93,5 +105,15 @@ class Potion
     public function setNumberOfUse(int $newNumberOfUse): int
     {
         return $this->numberOfUse = $newNumberOfUse;
+    }
+
+    public function getRating(): float
+    {
+        return $this->rating;
+    }
+
+    public function setRating(float $newRating): float
+    {
+        return $this->rating = $newRating;
     }
 }
