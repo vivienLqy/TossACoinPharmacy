@@ -11,7 +11,7 @@ function findDoctor ($db){
     $sql = "SELECT * FROM `doctor_name`";
     $requete = $db->query($sql);
     $doctor_names = $requete->fetchAll();
-    return $doctor_names;
+    return $doctor_names; 
 }
 function findIngredient($db){
     $sql = "SELECT * FROM `ingredient`";
