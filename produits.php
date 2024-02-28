@@ -1,10 +1,11 @@
 <?php
 // Inclusion des fichiers de configuration et de fonctions
-require_once __DIR__ . ('/config/config.php');
-require_once __DIR__ . ('/function/database.fn.php');
-$db = getPDOlink($config);
-require_once __DIR__ . ('/function/potion_fn.php');
+// require_once __DIR__ . ('/config/config.php');
+// require_once __DIR__ . ('/function/database.fn.php');
+// $db = getPDOlink($config);
 require_once __DIR__ . ('/utilities/header.php');
+
+require_once __DIR__ . ('/function/potion_fn.php');
 
 // Récupération de toutes les potions depuis la base de données
 

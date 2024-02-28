@@ -72,7 +72,7 @@ body{
     font-size: 12px;
 }
 .background{
-    background: no-repeat center url("assets/img/peakpx.jpg");
+    background: no-repeat center url("/assets/img/peakpx.jpg");
     background-size: cover;
     /* height: 100vh; */
 }

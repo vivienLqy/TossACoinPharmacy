@@ -32,18 +32,18 @@ function findPictureDoctor($db){
 function findPotion ($db, $currentId) {
     $sql = "SELECT 
     p.id, p.title, p.rating, p.duration, p.toxic, p.utilisation, p.price, p.comment,
-     dn.name AS doctor_name,
-     cn.name AS categori_name,
-     GROUP_CONCAT(i.name SEPARATOR ', ') as ingredient
-     FROM `potion` AS p 
-     INNER JOIN doctor_name dn ON p.doctorID = dn.id
-     INNER JOIN categori_name cn ON p.categoriID = cn.id
-     INNER JOIN ingredient_potion ip ON p.id = ip.potionID
-     JOIN ingredient i ON ip.ingredientID = i.id
-     WHERE p.id = $currentId";
-     $requete = $db->query($sql);
-     $result = $requete->fetch();
-     return $result;
+    dn.name AS doctor_name,
+    cn.name AS categori_name,
+    GROUP_CONCAT(i.name SEPARATOR ', ') as ingredient
+    FROM `potion` AS p 
+    INNER JOIN doctor_name dn ON p.doctorID = dn.id
+    INNER JOIN categori_name cn ON p.categoriID = cn.id
+    INNER JOIN ingredient_potion ip ON p.id = ip.potionID
+    JOIN ingredient i ON ip.ingredientID = i.id
+    WHERE p.id = $currentId";
+    $requete = $db->query($sql);
+    $result = $requete->fetch();
+    return $result;
 }
 
 // Récupère l'image associée à une potion spécifique en fonction de son ID
