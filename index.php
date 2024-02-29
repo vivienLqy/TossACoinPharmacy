@@ -6,7 +6,7 @@ require __DIR__ . ("/utilities/header.php");
 require __DIR__ . ('/function/potion_fn.php');
 
 // Connexion à la base de données et récupération des 4 meilleures potions
-$db = getPDOlink($config);
+
 $potions = potionTop4($db);
 $doctors = findPictureDoctor($db);
 ?>

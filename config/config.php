@@ -6,5 +6,4 @@ $config = [
   'dbport' => '8889',
   'dbuser' => 'root',
   'dbpass' => 'root'
-
 ];

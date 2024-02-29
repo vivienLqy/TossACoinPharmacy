@@ -1,10 +1,10 @@
 <?php
 // Inclusion des fichiers de configuration et de fonctions
-require_once __DIR__ . ('/config/config.php');
+require_once __DIR__ . ('/utilities/header.php');
 require_once __DIR__ . ('/function/database.fn.php');
 
 // Connexion à la base de données en utilisant les informations de configuration
-$db = getPDOlink($config);
+
 
 // Inclusion du fichier de fonction pour la gestion des potions
 require_once __DIR__ . ('/function/potion_fn.php');
@@ -21,4 +21,3 @@ require_once __DIR__ . ('/utilities/card.php');
 
 // Inclusion du fichier de pied de page
 require __DIR__ . ("/utilities/footer.php");
-?>
