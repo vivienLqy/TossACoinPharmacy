@@ -1,6 +1,6 @@
 <?php
 // Définition du domaine de base du site
-$domain = '/';
+$domain = 'http://localhost:8888/vpharma/';
 
 // Définition des URL des différentes pages du site
 $index_page = $domain; // L'URL de la page d'accueil est simplement le domaine
@@ -14,4 +14,3 @@ $contact_name = 'Contactez-nous'; // Nom de la page de contact
 
 // Récupération de l'URL actuelle de la page à partir de la variable superglobale $_SERVER
 $current_url = $_SERVER['SCRIPT_NAME'];
-

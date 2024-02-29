@@ -1,9 +1,10 @@
 <?php
-  //On defini nos variables d'environnement :
-  $config = array(
-    'dbhost' => 'localhost',
-    'dbname' => 'tdb_vpharma',
-    'dbport' => '3306',
-    'dbuser' => 'root',
-    'dbpass' => 'root'
-  );
+//On defini nos variables d'environnement :
+$config = [
+  'dbhost' => 'localhost',
+  'dbname' => 'vpharma',
+  'dbport' => '8889',
+  'dbuser' => 'root',
+  'dbpass' => 'root'
+
+];
