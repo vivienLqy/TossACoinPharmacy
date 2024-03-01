@@ -34,7 +34,8 @@ class Potion extends Model
         INNER JOIN ingredient_potion ip ON p.id = ip.potionID
         INNER JOIN picture ON p.id = picture.potionId
         JOIN ingredient i ON ip.ingredientID = i.id
-        WHERE p.id = $currentId";
+        WHERE p.id = $currentId
+        GROUP BY p.id, picture.pathImg";
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetch(PDO::FETCH_ASSOC);
