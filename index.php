@@ -75,7 +75,7 @@ $potions = $potionsInstance->getPotionTop4();
         <div class="containers">
             <?php foreach ($potions as $potion) : ?>
                 <!-- Affichage des informations pour chaque potion -->
-                <div class="img-box position-relative" style="--img: url(<?= $potion['pathImg'] ?>);">
+                <div class="img-box position-relative" style="background-image: url('<?= $potion['pathImg'] ?>') --img: url();">
                     <div class="desc bg-secondary position-absolute bottom-0 h-35 start-50 translate-middle rounded-2 w-75 bg-opacity-50 text-center text-light">
                         <!-- Titre de la potion -->
                         <h2>

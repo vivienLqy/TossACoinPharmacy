@@ -85,7 +85,8 @@ body{
 }
 .img-box{
     height: 500px;
-    background: var(--img) center;
+    /* background: var(--img) center; */
+    background-position: center;
     background-size: cover;
     flex-basis: 260px;
     position: relative;
