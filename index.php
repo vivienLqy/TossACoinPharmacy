@@ -1,20 +1,20 @@
 <?php
-// Inclusion de l'en-tête de la page
+
 require __DIR__ . ("/utilities/header.php");
+require __DIR__ . ("/models/Doctor.php");
+require __DIR__ . ("/models/Potion.php");
 
-// Inclusion du fichier de fonction pour la gestion des potions
-require __DIR__ . ('/function/potion_fn.php');
+// $potions = potionTop4($db);
 
-// Connexion à la base de données et récupération des 4 meilleures potions
-$db = getPDOlink($config);
-$potions = potionTop4($db);
-$doctors = findPictureDoctor($db);
+$doctor = new Doctor;
+$doctors = $doctor->getAllDoctor();
+$potionInstance = new Potion;
+$potions = $potionInstance->getTop4Potion();
 ?>
 
 <section>
     <div class="d-flex align-items-center flex-column">
         <div class="mt-5 bg-op text-white w-50 p-3 d-flex flex-column align-items-center">
-            <!-- Titre et contenu principal de la section -->
             <h2 class="text-center ff-tw neonText">Notre Site</h2>
             <p class="text-center">
                 Bienvenue chez TossACoinPharmacy, votre partenaire de confiance pour des solutions de santé
@@ -22,7 +22,6 @@ $doctors = findPictureDoctor($db);
                 services dans le domaine de la vente de potions. Faisons connaissance avec ceux qui contribuent chaque
                 jour à la réussite de notre mission.
             </p>
-            <!-- Bouton de lien vers la page des produits -->
             <a href="produits.php" class="btn btn-red w-50 text-light" role="button">Nos produits</a>
         </div>
     </div>
@@ -42,7 +41,7 @@ $doctors = findPictureDoctor($db);
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title neonText ff-tw">
-                                        <?= $doctor['doctor_name'] ?>
+                                        <?= $doctor['name'] ?>
                                     </h5>
                                     <p class="card-text">
                                         <?= $doctor['bio'] ?>
@@ -76,7 +75,7 @@ $doctors = findPictureDoctor($db);
                         <div>
                             Note :
                             <?= $potion['rating'] . '/ 10 &nbsp;'; ?>
-                            <?= getStar($potion['rating']); ?>
+                            <?= Potion::getStar($potion['rating']); ?>
                         </div>
                         <!-- Prix de la potion -->
                         <p>
