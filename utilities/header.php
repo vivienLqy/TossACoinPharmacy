@@ -1,12 +1,12 @@
 <?php
 // Inclusion des fichiers de configuration et de fonctions
-require_once dirname(__DIR__) . ('/config/config.php');
+// require_once dirname(__DIR__) . ('/config/config.php');
 // require_once dirname(__DIR__) . ('/function/database.fn.php');
 
-require_once dirname(__DIR__) . ('/models/DatabaseConnection.php');
+require_once dirname(__DIR__) . ('/app/Model.php');
 
-$database = new DatabaseConnection($config);
-$db = $database->getPDO();
+$database = new Model();
+// $db = $database->getConnection();
 
 // Connexion à la base de données
 // $db = getPDOlink($config);

@@ -4,14 +4,14 @@
         <!-- Ligne centrée -->
         <div class="col-md-5 border p-4 rounded-5 text-center bg-op text-white">
             <!-- Colonne de taille moyenne -->
-            <img class="mx-auto d-block w-75 rounded-5 mt-5" src="<?= $picture['pathImg'] ?>" alt="">
+            <img class="mx-auto d-block w-75 rounded-5 mt-5" src="<?= $potion['pathImg'] ?>" alt="">
             <!-- Image -->
             <h2 class="neonText"><?= $potion['title'] ?></h2>
             <!-- Titre de la potion -->
             <p>Le créateur est : <?= $potion['doctor_name'] ?></p>
             <!-- Nom du créateur -->
             <div>Note : <?= $potion['rating'] . '/ 10 &nbsp;'; ?>
-                <?= getStar($potion['rating']); ?>
+                <?= Potion::getStar($potion['rating']); ?>
             </div>
             <!-- Note de la potion -->
             <p class="mt-3">Prix : <?= $potion['price'] ?> <i class="fa-solid fa-crown"></i></p>

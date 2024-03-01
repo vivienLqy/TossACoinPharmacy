@@ -1,14 +1,23 @@
 <?php
 // Inclusion de l'en-tête de la page
-require __DIR__ . ("/utilities/header.php");
+require_once __DIR__ . ("/utilities/header.php");
+require_once __DIR__ . ("/models/Doctor.php");
+require_once __DIR__ . ("/models/Potion.php");
 
 // Inclusion du fichier de fonction pour la gestion des potions
-require __DIR__ . ('/function/potion_fn.php');
+// require __DIR__ . ('/function/potion_fn.php');
 
 // Connexion à la base de données et récupération des 4 meilleures potions
+
+$doctorsInstance = new Doctor;
+$doctors = $doctorsInstance->getAllDoctor();
+
+$potionsInstance = new Potion;
+$potions = $potionsInstance->getPotionTop4();
+
 // $db = getPDOlink($config);
-$potions = potionTop4($db);
-$doctors = findPictureDoctor($db);
+// $potions = potionTop4($db);
+// $doctors = findPictureDoctor($db);
 ?>
 
 <section>
@@ -42,7 +51,7 @@ $doctors = findPictureDoctor($db);
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title neonText ff-tw">
-                                        <?= $doctor['doctor_name'] ?>
+                                        <?= $doctor['name'] ?>
                                     </h5>
                                     <p class="card-text">
                                         <?= $doctor['bio'] ?>
@@ -76,7 +85,7 @@ $doctors = findPictureDoctor($db);
                         <div>
                             Note :
                             <?= $potion['rating'] . '/ 10 &nbsp;'; ?>
-                            <?= getStar($potion['rating']); ?>
+                            <?= Potion::getStar($potion['rating']); ?>
                         </div>
                         <!-- Prix de la potion -->
                         <p>
