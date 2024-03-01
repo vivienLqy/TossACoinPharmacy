@@ -5,5 +5,6 @@ $config = [
   'dbname' => 'vpharma',
   'dbport' => '8889',
   'dbuser' => 'root',
-  'dbpass' => 'root'
+  'dbpass' => 'root',
+  'dbchar' => 'utf8'
 ];

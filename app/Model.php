@@ -2,22 +2,24 @@
 
 class Model
 {
-    private $dbhost = 'localhost';
-    private $dbname = 'vpharma';
-    private $dbport = '8889';
-    private $dbuser = 'root';
-    private $dbpass = 'root';
+
 
     protected $db;
 
-    public function getConnexion()
+
+    public function getConnection()
     {
-        try {
-            $this->db = new PDO("mysql:host=" . $this->dbhost . ";dbname=" . $this->dbname . ";port=" . $this->dbport, $this->dbuser, $this->dbpass);
-            $this->db->exec("SET NAMES utf8");
-            return $this->db;
-        } catch (PDOException $e) {
-            echo "Erreur de connexion : " . $e->getMessage();
+
+        if ($this->db === null) {
+            try {
+                require dirname(__DIR__) . '/config/config.php';
+                $dsn = "mysql:host=" . $config['dbhost'] . ";dbname=" . $config['dbname'] . ";port=" . $config['dbport'] . ";charset=" . $config['dbchar'];
+                $this->db = new PDO($dsn, $config['dbuser'], $config['dbpass']);
+                return $this->db;
+            } catch (PDOException $e) {
+                echo "Erreur de connexion : " . $e->getMessage();
+            }
         }
+        return $this->db;
     }
 }

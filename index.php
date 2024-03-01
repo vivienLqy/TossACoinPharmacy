@@ -1,14 +1,16 @@
 <?php
-// Inclusion de l'en-tête de la page
-require __DIR__ . ("/utilities/header.php");
 
-// Inclusion du fichier de fonction pour la gestion des potions
-require __DIR__ . ('/function/potion_fn.php');
+require_once __DIR__ . ("/utilities/header.php");
+require_once __DIR__ . ("/models/Doctor.php");
+require_once __DIR__ . ("/models/Potion.php");
 
-// Connexion à la base de données et récupération des 4 meilleures potions
 
-$potions = potionTop4($db);
-$doctors = findPictureDoctor($db);
+$doctorsInstance = new Doctor;
+$doctors = $doctorsInstance->getAllDoctor();
+$potionsInstance = new Potion;
+$potions = $potionsInstance->getPotionTop4();
+
+
 ?>
 
 <section>
@@ -42,7 +44,7 @@ $doctors = findPictureDoctor($db);
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title neonText ff-tw">
-                                        <?= $doctor['doctor_name'] ?>
+                                        <?= $doctor['name'] ?>
                                     </h5>
                                     <p class="card-text">
                                         <?= $doctor['bio'] ?>
@@ -66,7 +68,8 @@ $doctors = findPictureDoctor($db);
         <div class="containers">
             <?php foreach ($potions as $potion) : ?>
                 <!-- Affichage des informations pour chaque potion -->
-                <div class="img-box position-relative" style="--img: url(<?= $potion['pathImg'] ?>);">
+                <div class="img-box position-relative" style="background-image: url('.<?= $potion['pathImg'] ?>');">
+
                     <div class="desc bg-secondary position-absolute bottom-0 h-35 start-50 translate-middle rounded-2 w-75 bg-opacity-50 text-center text-light">
                         <!-- Titre de la potion -->
                         <h2>
@@ -76,7 +79,7 @@ $doctors = findPictureDoctor($db);
                         <div>
                             Note :
                             <?= $potion['rating'] . '/ 10 &nbsp;'; ?>
-                            <?= getStar($potion['rating']); ?>
+                            <?= Potion::getStar($potion['rating']); ?>
                         </div>
                         <!-- Prix de la potion -->
                         <p>

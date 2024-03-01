@@ -5,12 +5,13 @@ require_once dirname(__DIR__) . ('/app/Model.php');
 
 $db_instance =  new Model;
 
-$db = $db_instance->getConnexion();
+$db = $db_instance->getConnection();
 
 // Inclusion des fichiers de configuration et de fonction pour l'en-tête
 require_once dirname(__DIR__) . ('/config/headerConfig.php');
 require_once dirname(__DIR__) . ('/function/header.fn.php');
 ?>
+<?php error_reporting(-1); ?>
 
 <!DOCTYPE html>
 <html lang="fr-FR">
