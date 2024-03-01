@@ -1,17 +1,8 @@
 <?php
-// Inclusion des fichiers de configuration et de fonctions
-// require_once dirname(__DIR__) . ('/config/config.php');
-// require_once dirname(__DIR__) . ('/function/database.fn.php');
 
 require_once dirname(__DIR__) . ('/app/Model.php');
-
 $database = new Model();
-// $db = $database->getConnection();
 
-// Connexion à la base de données
-// $db = getPDOlink($config);
-
-// Inclusion des fichiers de configuration et de fonction pour l'en-tête
 require_once dirname(__DIR__) . ('/config/headerConfig.php');
 require_once dirname(__DIR__) . ('/function/header.fn.php');
 ?>
@@ -34,24 +25,24 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <title>TossACoinPharmacy</title> <!-- Titre de la page -->
+    <title>TossACoinPharmacy</title>
 </head>
 
-<body class="d-flex flex-column vh-100"> <!-- Corps de la page avec une disposition flexbox en colonne -->
+<body class="d-flex flex-column vh-100"> 
     <header>
-        <!-- En-tête de la page -->
-        <nav class="navbar navbar-expand-lg bg-op navbar-dark"> <!-- Barre de navigation Bootstrap -->
-            <div class="container"> <!-- Conteneur Bootstrap -->
-                <a class="navbar-brand ff-tw neonText" href="index.php"> <!-- Marque de la pharmacie -->
+
+        <nav class="navbar navbar-expand-lg bg-op navbar-dark"> 
+            <div class="container">
+                <a class="navbar-brand ff-tw neonText" href="index.php">
                     <img class="logo" src="/assets/img/logo.png" alt="">TossACoinPharmacy
                 </a>
-                <!-- Bouton de bascule pour le menu de navigation sur les appareils mobiles -->
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <!-- Contenu du menu de navigation -->
-                    <div class="navbar-nav"> <!-- Liste des éléments du menu de navigation -->
+
+                    <div class="navbar-nav">
                         <a class="nav-link text-light ff-tw neonText <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
                         <a class="nav-link text-light ff-tw neonText <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produits</a>
                         <a class="nav-link text-light ff-tw neonText <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
@@ -66,4 +57,4 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
         </nav>
     </header>
 
-    <main class="flex-grow-1 background"> <!-- Contenu principal de la page -->
+    <main class="flex-grow-1 background">

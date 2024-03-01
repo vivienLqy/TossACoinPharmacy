@@ -3,44 +3,62 @@
 class Potion extends Model
 {
 
+    public function __construct()
+    {
+        $this->table = 'potion';
+        $this->getConnection();
+    }
+
     public function getAllPotions()
     {
-        $this->getConnection();
-        // Requête SQL pour récupérer toutes les potions avec leurs images correspondantes
         $sql = "SELECT * FROM potion 
-                    LEFT JOIN picture ON potion.id = picture.potionID";
-
-        // Préparez la requête
-        $requete = $this->db->prepare($sql);
-
-        // Exécutez la requête
-        $requete->execute();
-
-        // Renvoie les résultats
-        return $requete->fetchAll();
+                LEFT JOIN picture ON potion.id = picture.potionID";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
     }
 
     public function getPotionById($currentId)
     {
-        $this->getConnection();
         $sql = "SELECT p.id, p.title, p.rating, p.duration, p.toxic, p.utilisation, p.price, p.comment,
-        dn.name AS doctor_name,
-        cn.name AS categori_name,
-        picture.pathImg,
-        GROUP_CONCAT(i.name SEPARATOR ', ') as ingredient
-        FROM `potion` AS p 
-        INNER JOIN doctor_name dn ON p.doctorID = dn.id
-        INNER JOIN categori_name cn ON p.categoriID = cn.id
-        INNER JOIN ingredient_potion ip ON p.id = ip.potionID
-        INNER JOIN picture ON p.id = picture.potionId
-        JOIN ingredient i ON ip.ingredientID = i.id
-        WHERE p.id = $currentId
-        GROUP BY p.id, picture.pathImg";
+                dn.name AS doctor_name,
+                cn.name AS categori_name,
+                picture.pathImg,
+                GROUP_CONCAT(i.name SEPARATOR ', ') as ingredient
+                FROM `potion` AS p 
+                INNER JOIN doctor_name dn ON p.doctorID = dn.id
+                INNER JOIN categori_name cn ON p.categoriID = cn.id
+                INNER JOIN ingredient_potion ip ON p.id = ip.potionID
+                INNER JOIN picture ON p.id = picture.potionId
+                JOIN ingredient i ON ip.ingredientID = i.id
+                WHERE p.id = $currentId
+                GROUP BY p.id, picture.pathImg";
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetch(PDO::FETCH_ASSOC);
     }
 
+    
+    public function getPotionTop4()
+    {
+        $sql = "SELECT * FROM `potion` 
+                INNER JOIN picture ON potion.id = picture.potionID
+                ORDER BY rating DESC LIMIT 4;";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getBestPotions($order)
+    {
+        $sql = "SELECT * FROM `potion` 
+                LEFT JOIN picture ON potion.id = picture.potionID
+                ORDER BY price $order ;";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
     public static function getStar($rating)
     {
         $starRating = round($rating);
@@ -60,29 +78,6 @@ class Potion extends Model
             echo '<i class="bi bi-star"></i>';
         }
     }
-
-    public function getPotionTop4()
-    {
-        $this->getConnection();
-        $sql = "SELECT * FROM `potion` 
-                INNER JOIN picture ON potion.id = picture.potionID
-                ORDER BY rating DESC LIMIT 4;";
-        $query = $this->db->prepare($sql);
-        $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function getBestPotions($order)
-    {
-        $this->getConnection();
-        $sql = "SELECT * FROM `potion` 
-                LEFT JOIN picture ON potion.id = picture.potionID
-                ORDER BY price $order ;";
-        $query = $this->db->prepare($sql);
-        $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     // private int $id;
     // private string $name;
     // private string $creator;
@@ -94,10 +89,10 @@ class Potion extends Model
     // private float $price;
     // private int $numberOfUse;
     // private float $rating;
-
+    
     // Getter : permet de récupérer la valeur d'une propriété
     // Setter : permet d'assigner une valeur à une propriété
-
+    
     // public function getName(): string
     // {
     //     return $this->name;

@@ -6,7 +6,7 @@ class Model
     protected $db;
 
     public $table;
-    public $id;
+    // public $id;
 
     public function getConnection()
     {        

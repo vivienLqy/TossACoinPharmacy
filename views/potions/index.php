@@ -1,26 +1,6 @@
 <?php
-// Inclusion des fichiers de configuration et de fonctions
-// require_once __DIR__ . ('/config/config.php');
-// require_once __DIR__ . ('/function/database.fn.php');
-// $db = getPDOlink($config);
-require_once __DIR__ . ('/utilities/header.php');
-require_once __DIR__ . "/models/Potion.php";
-
-// require_once __DIR__ . ('/function/potion_fn.php');
-
-// Récupération de toutes les potions depuis la base de données
-
-
-// si la valeur choisis dans la selection est egale à ASC/DESC il remplace $order dans la
-// fontion findBestMedicine par la valeur choisis ce qui modifiera l'ordre des prix.
-// S'il n'y a aucun choix il mettra la fonction qui permet d'avoir l'ordre selon la base de données.
-// if (isset($_POST['mySelect']) && $_POST['mySelect'] == 'ASC') {
-//     $potions = findBestPotions($db, 'ASC');
-//   } else if (isset($_POST['mySelect']) && $_POST['mySelect'] == 'DESC') {
-//     $potions = findBestPotions($db, 'DESC');
-//   } else {
-//     $potions = findAllPotions($db);
-//   }
+require_once dirname(__DIR__) . ('/header.php');
+require_once dirname(__DIR__, 2) . ('/models/Potion.php');
 
 $potionsInstance = new Potion;
 $potions = $potionsInstance->getAllPotions();
@@ -35,6 +15,7 @@ if (isset($_POST['mySelect'])) {
 }
 
 ?>
+
 <form action="" method="post" class="row align-items-center justify-content-end p-3 m-3">
     <div class="col-4">
         <select class="form-select form-select-sm" name="mySelect" aria-label="Default select example">
@@ -75,4 +56,4 @@ if (isset($_POST['mySelect'])) {
     </div>
 </div>
 
-<?php require __DIR__ . ("/utilities/footer.php"); ?>
+<?php require_once dirname(__DIR__) . ("/footer.php"); ?>

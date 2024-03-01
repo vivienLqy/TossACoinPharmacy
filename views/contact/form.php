@@ -1,7 +1,7 @@
 <?php
-require_once dirname(__DIR__) . ('/assets/form.data.php');
+require_once dirname(__DIR__, 2) . ('/assets/form.data.php');
 
- echo '<div class="row m-5 d-flex justify-content-center">';
+echo '<div class="row m-5 d-flex justify-content-center">';
 foreach ($name as $value) {
     echo '<div class="col-md-6">
         <div class="md-form mb-0">
@@ -20,4 +20,3 @@ foreach ($coord as $value) {
     </div>';
 }
 echo '</div>';
-?>
