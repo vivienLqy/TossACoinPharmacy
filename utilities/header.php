@@ -44,7 +44,7 @@ require_once dirname(__DIR__) . ('/function/header.fn.php');
                         <a class="nav-link text-light ff-tw neonText <?= isActive($index_page, $current_url); ?> <?= isActive('/index.php', $current_url); ?>" aria-current="page" href="<?= $index_page; ?>">Accueil</a>
                         <a class="nav-link text-light ff-tw neonText <?= isActive($produit_page, $current_url); ?>" href="<?= $produit_page; ?>">Nos produits</a>
                         <a class="nav-link text-light ff-tw neonText <?= isActive($contact_page, $current_url); ?>" href="<?= $contact_page; ?>">Contact</a>
-                        <a href="panier.php" class="btn btn-outline-light ms-4">
+                        <a href="/views/panier.php" class="btn btn-outline-light ms-4">
                             <i class="bi-cart-fill me-1"></i>
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </a>

@@ -3,6 +3,7 @@
 require __DIR__ . ("/utilities/header.php");
 require __DIR__ . ("/models/Doctor.php");
 require __DIR__ . ("/models/Potion.php");
+define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 
 // $potions = potionTop4($db);
 

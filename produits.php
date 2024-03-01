@@ -3,22 +3,14 @@
 require_once __DIR__ . '/utilities/header.php';
 require_once __DIR__ . '/models/Potion.php';
 
+
 $potionsInstance = new Potion;
 $potions = $potionsInstance->getAllPotions();
 
-// if (isset($_POST['mySelect']) && $_POST['mySelect'] == 'ASC') {
-//     $potions = $potionsInstance->getBestPotions('ASC');
-// } else if (isset($_POST['mySelect']) && $_POST['mySelect'] == 'DESC') {
-//     $potions = $potionsInstance->getBestPotions('DESC');
-// } else {
-//     $potions = $potionsInstance->getAllPotions();
-// }
 
 $orderBy = isset($_POST['mySelect']) ? ($_POST['mySelect'] == 'ASC' ? 'ASC' : 'DESC') : '';
 
 $potions = $orderBy ? $potionsInstance->getBestPotions($orderBy) : $potionsInstance->getAllPotions();
-
-
 
 
 ?>
@@ -34,7 +26,6 @@ $potions = $orderBy ? $potionsInstance->getBestPotions($orderBy) : $potionsInsta
         </select>
     </div>
     <div class="col-4">
-        <!-- bouton pour soumettre le resultat -->
         <input type="submit" class="btn btn-red text-white">
     </div>
 </form>
