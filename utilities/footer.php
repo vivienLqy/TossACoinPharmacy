@@ -1,5 +1,4 @@
 <!-- Footer-->
-</main>
 
 <footer class="bg-dark">
     <div class="container">

@@ -1,17 +1,18 @@
 <?php
 // Récupère toutes les potions, y compris celles sans image associée
-function findAllPotions ($db) {
-    $sql = "SELECT * FROM `potion` 
-    LEFT JOIN picture ON potion.id = picture.potionID;";
-    $requete = $db->query($sql);
-    $potions = $requete->fetchAll();
-    return $potions;
-}
-function findDoctor ($db){
-    $sql = "SELECT * FROM `doctor_name`";
-    $requete = $db->query($sql);
-    $doctor_names = $requete->fetchAll();
-    return $doctor_names;
+// function findAllPotions ($db) {
+//     $sql = "SELECT * FROM `potion` 
+//     LEFT JOIN picture ON potion.id = picture.potionID;";
+//     $requete = $db->query($sql);
+//     $potions = $requete->fetchAll();
+//     return $potions;
+// }
+function getAllDoctor ($db){
+    $sql = "SELECT dn.name, picd.pathImg FROM doctor_name dn
+    INNER JOIN picture_doctor picd ON dn.id = picd.doctor_id;";
+    $query = $db->prepare($sql);
+    $doctor_names = execute();
+    return $query->fetchAll();
 }
 function findIngredient($db){
     $sql = "SELECT * FROM `ingredient`";

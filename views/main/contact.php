@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . ("/utilities/header.php");
+require ROOT . ("/utilities/header.php");
 ?>
 <section class="container mt-4 bg-op">
     <!-- GRILLE COORDONEES + FORUMUALIRE -->
@@ -9,7 +9,7 @@ require __DIR__ . ("/utilities/header.php");
             <h2 class="h1-responsive neonText my-4 pb-1 text-center">Formulaire de contact</h2>
             <form name="contact-form" id="formulaire" class="text-center mt-5">
                 <!--Grid row-->
-                <?php require __DIR__ . ("/utilities/form.php"); ?>
+                <?php require ROOT . ("/utilities/form.php"); ?>
                 <!--Grid row-->
                 <div class="row mt-4 mx-0">
                     <!--Grid column-->
@@ -36,4 +36,4 @@ require __DIR__ . ("/utilities/header.php");
     </div>
 </section>
 
-<?php require __DIR__ . ("/utilities/footer.php"); ?>
+<?php require ROOT . ("/utilities/footer.php"); ?>
